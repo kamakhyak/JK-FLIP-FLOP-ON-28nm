@@ -1,21 +1,21 @@
 # JK-FLIP-FLOP-ON-28nm
 - This respository presents the Design of JK flip flop.Performance improvement of JK flip flop has been done by using NAND gates. Design is implemented using Synopys Custom Compiler on 28nm CMOS technology.
 ## Table of Content
--Abstract
--Circuit Details
--Truth Table
--Tools used
--Reference Circuit
--Reference Waveform
--JK Flip Flop
--Schematic
--Waveform
--Delay
--Average Power
--Conclusion
--Author
--Acknowledgement
--Refrence
+- Abstract
+- Circuit Details
+- Truth Table
+- Tools used
+- Reference Circuit
+- Reference Waveform
+- JK Flip Flop
+- Schematic
+- Waveform
+- Delay
+- Average Power
+- Conclusion
+- Author
+- Acknowledgement
+- Refrence
 
 
 ##Abstract
