@@ -1,0 +1,45 @@
+*Custom Compiler Version S-2021.09
+*Tue Mar  1 17:39:39 2022
+
+*.SCALE METER
+*.LDD
+.GLOBAL gnd!
+********************************************************************************
+* Library          : cp_lib_1
+* Cell             : jk_flip_flop
+* View             : schematic
+* View Search List : auCdl schematic
+* View Stop List   : auCdl
+********************************************************************************
+.subckt jk_flip_flop J K Qb Qb_bar Vdd clk gnd
+*.PININFO J:I K:I Qb:O Qb_bar:O Vdd:B clk:I gnd:B
+MM33 net108 Qb_bar gnd gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM25 net108 clk net104 net108 n105 w=0.1u l=0.03u nf=1 m=1
+MM23 net104 J Qb_bar net104 n105 w=0.1u l=0.03u nf=1 m=1
+MM22 Qb_bar Qb gnd gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM28 gnd Qb_bar Qb gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM32 gnd Qb net79 gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM18 net75 clk net79 net79 n105 w=0.1u l=0.03u nf=1 m=1
+MM17 Qb K net75 net75 n105 w=0.1u l=0.03u nf=1 m=1
+MM8 net145 K Vdd Vdd p105 w=0.1u l=0.03u nf=1 m=1
+MM10 net145 Qb Vdd Vdd p105 w=0.1u l=0.03u nf=1 m=1
+MM30 Vdd clk net145 Vdd p105 w=0.1u l=0.03u nf=1 m=1
+MM29 net145 Qb_bar Qb net145 p105 w=0.1u l=0.03u nf=1 m=1
+MM13 net144 clk Vdd Vdd p105 w=0.1u l=0.03u nf=1 m=1
+MM14 net144 Qb_bar Vdd Vdd p105 w=0.1u l=0.03u nf=1 m=1
+MM31 Vdd J net144 Vdd p105 w=0.1u l=0.03u nf=1 m=1
+MM16 Qb_bar Qb net144 net144 p105 w=0.1u l=0.03u nf=1 m=1
+.ends jk_flip_flop
+
+********************************************************************************
+* Library          : cp_lib_1
+* Cell             : jk_flip_flop_tb
+* View             : schematic
+* View Search List : auCdl schematic
+* View Stop List   : auCdl
+********************************************************************************
+.subckt jk_flip_flop_tb
+XI0 J K Qb Qb_bar net14 clk gnd! jk_flip_flop
+CC20 Qb_bar gnd! 5p $[CP]
+CC16 Qb gnd! 5p $[CP]
+.ends jk_flip_flop_tb
